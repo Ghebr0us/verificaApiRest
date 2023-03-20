@@ -24,6 +24,7 @@ export class PokesearchComponent implements OnInit {
     }
     this.query = query.value;
     this.obsPokemon = this.poke.searchPokemon(this.query);
-    this.obsPokemon.subscribe((data) => { this.results = data; console.log(this.results) });
-    }
+    this.obsPokemon.subscribe((data) => { this.results = data; console.log(this.results.name) });
+   
+  }
   }
