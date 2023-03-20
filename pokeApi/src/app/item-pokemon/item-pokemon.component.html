@@ -1,1 +1,12 @@
-<p>item-pokemon works!</p>
+<li *ngFor="let stat of pokemon.stats">
+    <td>{{stat.stat.name}}</td>
+    <td>{{stat.base_stat}}</td>
+</li>
+  <li>
+    <td>Peso</td>
+    <td>{{pokemon.weight}}</td>
+  </li>
+  <li>
+    <td>Altezza</td>
+    <td>{{pokemon.height}}</td>
+  </li>
