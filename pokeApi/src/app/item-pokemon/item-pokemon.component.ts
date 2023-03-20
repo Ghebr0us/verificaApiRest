@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PokemonService } from '../pokemon.service';
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-item-pokemon',
   templateUrl: './item-pokemon.component.html',
@@ -16,8 +17,8 @@ export class ItemPokemonComponent implements OnInit{
   constructor(
     private poke: PokemonService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private location: Location) { }
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id')?.toString();
@@ -32,5 +33,9 @@ export class ItemPokemonComponent implements OnInit{
         });
       }
     });
+  }
+  back() : void
+  {
+    this.location.back();
   }
 }
